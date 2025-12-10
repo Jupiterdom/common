@@ -1,0 +1,9 @@
+#!/bin/bash
+ORIGINAL_PATH="/usr/bin/fatfetdh"
+
+if [[ -f "$ORIGINAL_PATH" ]]; then
+  exec "$ORIGINAL_PATH" --config /etc/fastfetch/config.jsonc
+else
+  echo "Error: Original fastfetch not found at $ORIGINAL_PATH" >&2
+  exit 1
+fi
